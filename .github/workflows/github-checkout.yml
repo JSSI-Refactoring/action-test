@@ -1,0 +1,21 @@
+name: github checkout
+
+# event type(event that trigger workflows)
+on: 
+  push:
+    branches: 
+      - dev
+      
+  pull_request:
+    branches:
+      - dev
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2 # 다른 사람이 만든 액션을 실행
+      - name: Run pwd
+        run: pwd
+      - name: Run ls -al
+        run: ls -al
