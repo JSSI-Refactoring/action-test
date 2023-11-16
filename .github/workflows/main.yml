@@ -1,0 +1,24 @@
+name: CI
+
+# event type(event that trigger workflows)
+on: 
+  push:
+    branches: 
+      - dev
+      
+  pull_request:
+    branches:
+      - dev
+
+# jobs: on의 이벤트들이 발생했을 때 진행되는 내역
+jobs:
+  build:
+  
+    runs-on: ubuntu-latest
+
+    # runner에서 확인
+    steps:
+      - name: Run pwd
+        run: pwd
+      - name: Run ls -al
+        run: ls -al
